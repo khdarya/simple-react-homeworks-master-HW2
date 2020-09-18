@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {homeWorkReducer, peopleType} from "./bll/homeWorkReducer";
+import React, {useCallback, useState} from "react";
+import {CheckAC, homeWorkReducer, peopleType, SortAC} from "./bll/homeWorkReducer";
 import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
 
 const initialPeople: Array<peopleType> = [
@@ -16,25 +16,36 @@ function HW8() {
 
     const finalPeople = people.map(p => (
         <div key={p._id}>
-                {p.name}
+            {p.name}
         </div>
     ))
 
-    const sortUp = () => setPeople(homeWorkReducer(initialPeople, {type: 'SORT', payload: "up"}))
+    const sortUp = useCallback(() => {
+        setPeople(homeWorkReducer(initialPeople, SortAC("up")));
+        setPeople([...people]);
+    }, [initialPeople])
 
+    const sortDown = useCallback(() => {
+        setPeople(homeWorkReducer(initialPeople, SortAC("down")));
+        setPeople([...people]);
+    }, [initialPeople])
+
+    const filterEighteen = useCallback(() => {
+        setPeople(homeWorkReducer(initialPeople, CheckAC(18)));
+
+    }, [initialPeople])
 
     return (
         <div>
             <hr/>
             homeworks 8
-
+            <p></p>
             {/*should work (должно работать)*/}
 
             {finalPeople}
-            <div><SuperButton onClick={sortUp}>Sort Up</SuperButton></div>
-            <div>sort down</div>
-
-            check 18
+            <div><SuperButton red onClick={sortUp}>Sort Up</SuperButton></div>
+            <div><SuperButton red onClick={sortDown}>Sort Down</SuperButton></div>
+            <div><SuperButton red onClick={filterEighteen}>18+</SuperButton></div>
 
             <hr/>
             {/*для личного творчества, могу проверить*/}
