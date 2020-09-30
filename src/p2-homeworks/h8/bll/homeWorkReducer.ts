@@ -59,7 +59,7 @@ export const homeWorkReducer = (state: Array<peopleType>, action: ActionType): A
             return newState;
         }
 
-        default: return [...state]
+        default: return state;  //Ignat fixed: was [..state]
     }
 };
 

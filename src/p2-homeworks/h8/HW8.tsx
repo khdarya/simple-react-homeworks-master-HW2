@@ -32,7 +32,7 @@ function HW8() {
 
     const filterEighteen = useCallback(() => {
         setPeople(homeWorkReducer(initialPeople, CheckAC(18)));
-
+       // setPeople([...people]);
     }, [initialPeople])
 
     return (

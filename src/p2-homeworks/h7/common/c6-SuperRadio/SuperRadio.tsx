@@ -34,6 +34,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = (
                 name={name}
                 checked={value === o}
                 onChange={onChangeCallback}
+                value={o}   //Ignat fixed
                 // name, checked, value, onChange
             />
             <span>{o}</span>
