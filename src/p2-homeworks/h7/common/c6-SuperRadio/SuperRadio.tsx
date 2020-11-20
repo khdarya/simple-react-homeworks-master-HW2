@@ -25,7 +25,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = (
 
 
     const mappedOptions: any[] = options
-        ? options.map((o, i) => ( // map options with key
+        ? options.map((o, i) => (
         <label key={name + "-" + i}>
 
             <input
@@ -34,8 +34,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = (
                 name={name}
                 checked={value === o}
                 onChange={onChangeCallback}
-                value={o}   //Ignat fixed
-                // name, checked, value, onChange
+                value={o}
             />
             <span>{o}</span>
         </label>
