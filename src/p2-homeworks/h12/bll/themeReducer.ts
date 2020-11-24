@@ -13,7 +13,7 @@ export type ChangeThemeCType = {
     theme: string
 }
 
-export const themeReducer = (state: InitStateType = initState, action: ChangeThemeCType): InitStateType => { // fix any
+export const themeReducer = (state: InitStateType = initState, action: ChangeThemeCType): InitStateType => {
     switch (action.type) {
         case "CHANGE-BACKGROUND":
             return {
@@ -27,4 +27,4 @@ export const themeReducer = (state: InitStateType = initState, action: ChangeThe
 
 export const changeThemeAC = (theme: string): ChangeThemeCType => {
     return {type: "CHANGE-BACKGROUND", theme}
-}; // fix any
+};

@@ -11,7 +11,7 @@ type RequestType = {
 }
 
 export const Request = (props: RequestType) => {
-debugger
+
     const onClick = () => {
         props.onClick();
     }

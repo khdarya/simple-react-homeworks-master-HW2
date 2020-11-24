@@ -12,13 +12,11 @@ const HW13 = () => {
 
         requestAPI.getCheckboxRes()
             .then((res) => {
-                debugger
-                setChecked(res.data.info)
+                setChecked(true)
                 setSuccess(res.data.info)
             })
 
             .catch(error => {
-                debugger
                 setError( error.response ? error.response.data.errorText : error.message)
             })
     }, [checked])

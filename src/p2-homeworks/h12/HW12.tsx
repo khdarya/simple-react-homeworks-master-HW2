@@ -21,7 +21,7 @@ function HW12() {
     }
 
     return (
-        <div className={s[theme.theme === 'dark' ? s.dark : s.red]}>
+        <div className={s[theme.theme]}>
             <hr/>
             <span className={s[theme.theme + '-text']}>
                 homeworks 12
@@ -31,6 +31,7 @@ function HW12() {
             {/*SuperSelect or SuperRadio*/}
 
             <SuperRadio
+                name={'theme'}
                 value={theme.theme}
                 options={themes}
                 onChangeOption={onChangeThemeCallback}
